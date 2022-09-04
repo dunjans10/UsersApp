@@ -1,0 +1,61 @@
+table {
+  width: 100%;
+  padding: 0 20px;
+}
+
+.container {
+  padding: 30px;
+}
+
+.btn{
+  margin-bottom: 25px;
+}
+
+.header-title{
+  color: #c2185b;
+  font-size: 16px;
+
+}
+
+.edit-btn{
+  margin-right: 9px;
+  color:#c2185b;
+}
+
+td{
+  width: 18%;
+}
+.w-27{
+  width: 27%;
+}
+
+th.mat-header-cell:first-of-type, td.mat-cell:first-of-type{
+  padding-left: 0;
+}
+
+td.mat-cell:last-of-type{
+  text-align: center;
+}
+
+
+.middle{
+  text-align: center;
+}
+.start{
+  text-align: start;
+}
+
+.error{
+  height: 100vh;
+  background-color: green;
+  color: black;
+  margin:100px 200px;
+}
+
+mat-progress-spinner{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}

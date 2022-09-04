@@ -1,0 +1,37 @@
+
+.form-container{
+  background-color: rgb(49, 49, 49);
+  width: 40%;
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.title{
+  color: #c2185b;
+  text-decoration: underline;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+.container-btn{
+  text-align: end;
+}
+.btn{
+  margin-right: 20px;
+}
+
+
+mat-progress-spinner{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+

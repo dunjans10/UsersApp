@@ -1,0 +1,51 @@
+<mat-progress-spinner mode="indeterminate" diameter="60" *ngIf="loading | async"></mat-progress-spinner>
+<div>
+  <div class="form-container">
+
+    <h3 *ngIf="isAddMode" class="title">Add User</h3>
+    <h3 *ngIf="!isAddMode" class="title">Edit User</h3>
+
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()" >
+      <mat-form-field appearance="outline">
+        <mat-label>Name:</mat-label>
+        <input formControlName="name" matInput placeholder="Enter name...">
+        <mat-error *ngIf="userForm.controls['name'].hasError('required')">Name is required!</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Email:</mat-label>
+        <input formControlName="email" matInput placeholder="Enter email...">
+        <mat-error *ngIf="userForm.controls['email'].hasError('required')">Email is required!</mat-error>
+        <mat-error *ngIf="userForm.controls['email'].hasError('email')">Format type is not good!</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Gender</mat-label>
+        <mat-select formControlName="gender">
+          <mat-option value=""></mat-option>
+          <mat-option *ngFor="let gender of genders" [value]="gender">
+            {{gender}}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="userForm.controls['gender'].hasError('required')">Gender is required!</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Status</mat-label>
+        <mat-select formControlName="status">
+          <mat-option value=""></mat-option>
+          <mat-option *ngFor="let status of statuses" [value]="status">
+            {{status}}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="userForm.controls['status'].hasError('required')">Status is required!</mat-error>
+      </mat-form-field>
+
+      <div class="container-btn">
+        <button mat-raised-button color="primary" class="btn" [disabled]="userForm.invalid">Save</button>
+        <button mat-raised-button color="accent" (click)="cancel()">Cancel</button>
+      </div>
+    </form>
+
+  </div>
+
+</div>
